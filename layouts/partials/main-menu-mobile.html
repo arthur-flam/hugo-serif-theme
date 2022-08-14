@@ -10,5 +10,13 @@
       </a>
     </li>
     {{end}}
+    {{ range .Translations }}
+    <li class="menu-item">
+      <a href="{{ .Permalink }}">
+        {{.Language.LanguageName}}
+        <img title="{{.Language.Params.flag}}" height="12px" class="flag" src="/images/{{.Language.Params.country}}.svg"/>
+      </a>
+    </li>
+    {{ end }}
   </ul>
 </div>

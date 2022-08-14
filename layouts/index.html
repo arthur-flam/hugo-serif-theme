@@ -35,7 +35,7 @@
     {{ if .Site.Params.homepage.show_services_button }}
     <div class="row justify-content-center">
       <div class="col-auto">
-        <a class="button button-primary" href="{{ "services/" | relURL }}">View All Services</a>
+        <a class="button button-primary" href="{{ "services/" | relURL }}">View All</a>
       </div>
     </div>
     {{ end }}
@@ -47,7 +47,8 @@
 <div class="strip strip-grey">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
     <div class="row justify-content-center">
-      {{ range .Site.Data.features }}
+      {{ $data := index .Site.Data .Site.Language.Lang }}
+      {{ range $data.features }}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature">
           {{ if .image }}

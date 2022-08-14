@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Language.Params.languageCode }}">
 
 <head>
   <meta charset="utf-8">
@@ -34,6 +34,15 @@
 
 </head>
 
+{{ if eq .Lang "he" }}
+<style>
+body {
+  text-align: right;
+  direction: rtl;
+}
+</style>
+{{ end }}
+
 <body class='page {{ block "body_classes" . }}{{ end }}'>
   {{ partial "main-menu-mobile.html" . }}
   <div class="wrapper">
@@ -46,7 +55,7 @@
   {{ partial "sub-footer.html" . }}
 
   {{ $scripts := resources.Get "js/scripts.js" }}
-
+  
   {{ block "footer_js" . }}
   {{ end }}
 

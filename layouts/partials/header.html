@@ -1,10 +1,16 @@
 <div class='header'>
   <div class="container">
     <div class="logo">
-      <a href="{{ .Site.Home.RelPermalink }}"><img height={{ .Site.Params.logo.desktop_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
+      <a href="{{ .Site.Home.RelPermalink }}" style="text-decoration: none;">
+        <h1 style="font-size: 25px; vertical-align: middle; margin-bottom: unset;"><span style="color: #2f2f41;">Flam</span>&Co</h1>
+        {{/*  <img height={{ .Site.Params.logo.desktop_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" />  */}}
+      </a>
     </div>
     <div class="logo-mobile">
-      <a href="{{ .Site.Home.RelPermalink }}"><img height={{ .Site.Params.logo.mobile_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
+      <a href="{{ .Site.Home.RelPermalink }}" style="text-decoration: none;">
+        <h1 style="font-size: 25px; vertical-align: middle; margin-bottom: unset;"><span style="color: #2f2f41;">Flam</span>&Co</h1>
+        {{/*  <img height={{ .Site.Params.logo.mobile_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" />  */}}
+      </a>
     </div>
     {{ partial "main-menu.html" . }}
     {{ partial "hamburger.html" . }}

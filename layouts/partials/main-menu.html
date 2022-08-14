@@ -11,5 +11,26 @@
       </a>
     </li>
     {{end}}
+    <li style="margin-left: 10px;">
+    {{ range .Translations }}
+    <div>
+      <a href="{{ .Permalink }}" class="alternate-lang" {{if eq .Language.Lang "he"}}style="font-size: 19px;"{{end}}>
+        <!-- {{.Language.LanguageName}} -->
+        <img title="{{.Language.Params.flag}}" height="12px" class="flag" src="/images/{{.Language.Params.country}}.svg"/>
+      </a>
+    </div>
+    {{ end }}
+     </li>
   </ul>
 </div>
+
+
+  <style>
+    .alternate-lang {
+      border-bottom: none !important;
+      text-decoration: none;
+      color: #848d96;
+      font-size:16px;
+      line-height: 20px;
+    }
+  </style>
