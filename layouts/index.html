@@ -35,7 +35,7 @@
     {{ if .Site.Params.homepage.show_services_button }}
     <div class="row justify-content-center">
       <div class="col-auto">
-        <a class="button button-primary" href="{{ "services/" | relURL }}">View All</a>
+        <a class="button button-primary" href="/{{.Lang}}{{ "services/" | relURL }}">View All</a>
       </div>
     </div>
     {{ end }}
