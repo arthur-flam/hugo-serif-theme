@@ -47,18 +47,30 @@
 <div class="strip strip-grey">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
     <div class="row justify-content-center">
-      {{ $data := index .Site.Data .Site.Language.Lang }}
-      {{ range $data.features }}
+      <h2>{{i18n "our-clients"}}</h2>
+    </div>
+    <div class="row justify-content-center">
+      {{/*  {{ $data := index .Site.Data .Site.Language.Lang }}  */}}
+      {{/*  {{ range $data.features }}  */}}
+      {{ range .Site.Data.features }}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature">
           {{ if .image }}
-          <div class="feature-image"><img width="100" height="100" alt="{{ .Title }} logo"
-              src="{{ .image | relURL }}" /></div>
+          <div class="feature-image"><img width="100%" alt="{{ .Title }} logo"
+              src="{{ .image | relURL }}"
+              {{ if .background }}
+              style="background: {{.background}};"
+              {{ end }}
+              /></div>
           {{ end }}
+          {{ if .show_title }}
           <h2 class="feature-title">{{ .title }}</h2>
+          {{ end }}
+          {{ if .show_description }}
           <div class="feature-content">
             <p>{{ .description }}</p>
           </div>
+          {{ end }}
         </div>
       </div>
       {{end}}
